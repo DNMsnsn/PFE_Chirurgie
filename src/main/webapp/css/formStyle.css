@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    background-color: #0f172a;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    max-width: 100vw;
+    max-height: auto;
+}
+
+.error{
+	margin: 10px auto;
+	padding: 5px;
+	
+	border: none;
+	border-radius: 5px;
+	color: red;
+	font-weight: bold;
+}
+
+.mycontainer {
+    width: 60vw;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e293b;
+    margin: 150px auto;
+    padding: 20px;
+}
+
+.lab{
+    margin: 10px 0 10px;
+    font-weight: bold;
+}
+
+.inp{
+    margin: 10px 0 20px;
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.bttn{
+    margin: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffcc00;
+    cursor: pointer;
+    color: rgb(29, 36, 43);
+    font-weight: bold;   
+}
+.bttn:hover{
+    background-color: #ffaa00;
+}
+
+.motif {
+	margin: 10px 0 20px;
+    width: 350px;
+    height: 100px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+

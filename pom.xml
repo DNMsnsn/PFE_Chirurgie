@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.pfechirurgie</groupId>
+  <artifactId>pfechirurgie</artifactId>
+  <version>1.0.0</version>
+  <packaging>war</packaging>
+  <name>PFE_Chirurgie</name>
+  <description>This is a project designed and developed by KASSOURI Tahar, with the contribution of KHABER Liza. Started in 20/01/2026 and finished in 08/02/2026. It's a solution for hospital management that can generate documents automatically and where patients can access there medical data easily just by usign a QR Code.
+And that's all.
+0xMsnsn_CXI</description>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+    <!-- Servlet API (Tomcat) -->
+    <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>5.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- JSP -->
+    <dependency>
+        <groupId>jakarta.servlet.jsp</groupId>
+        <artifactId>jakarta.servlet.jsp-api</artifactId>
+        <version>3.0.0</version>
+        <scope>provided</scope>
+    </dependency>
+    
+   </dependencies>
+  
+</project>

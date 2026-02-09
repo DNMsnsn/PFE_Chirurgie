@@ -1,0 +1,166 @@
+/// DATA BASE SQL CODE ///
+
+-- =========================
+-- Base de données
+-- =========================
+CREATE DATABASE IF NOT EXISTS pfe_chirurgie
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE pfe_chirurgie;
+
+-- =========================
+-- TABLE PATIENT
+-- =========================
+CREATE TABLE patient (
+    id_patient INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
+    date_naissance DATE NOT NULL,
+    sexe ENUM('Homme','Femme'),
+    telephone VARCHAR(20) UNIQUE,
+    email VARCHAR(100) UNIQUE,
+    adresse VARCHAR(255),
+    groupe_sanguin VARCHAR(3),
+    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+-- =========================
+-- TABLE MEDECIN
+-- =========================
+CREATE TABLE medecin (
+    id_medecin INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
+    specialite VARCHAR(100) NOT NULL,
+    telephone VARCHAR(20) UNIQUE,
+    email VARCHAR(100) UNIQUE,
+    role VARCHAR(30) DEFAULT 'CHIRURGIEN'
+) ENGINE=InnoDB;
+
+-- =========================
+-- TABLE AMSP
+-- =========================
+CREATE TABLE amsp (
+    id_amsp INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(50) NOT NULL,
+    prenom VARCHAR(50) NOT NULL,
+    telephone VARCHAR(20) UNIQUE,
+    email VARCHAR(100) UNIQUE,
+    fonction VARCHAR(50)
+) ENGINE=InnoDB;
+
+-- =========================
+-- TABLE RENDEZ_VOUS
+-- =========================
+CREATE TABLE rendez_vous (
+    id_rdv INT AUTO_INCREMENT PRIMARY KEY,
+    date_rdv DATETIME NOT NULL,
+    motif VARCHAR(255) NOT NULL,
+    statut ENUM('PREVU','ANNULE','REALISE','RATE') DEFAULT 'PREVU',
+    id_patient INT NOT NULL,
+    id_medecin INT NOT NULL,
+    FOREIGN KEY (id_patient) REFERENCES patient(id_patient),
+    FOREIGN KEY (id_medecin) REFERENCES medecin(id_medecin)
+) ENGINE=InnoDB;
+
+-- =========================
+-- TABLE DIAGNOSTIC
+-- =========================
+CREATE TABLE diagnostic (
+    id_diagnostic INT AUTO_INCREMENT PRIMARY KEY,
+    description TEXT NOT NULL,
+    date_diagnostic DATETIME DEFAULT CURRENT_TIMESTAMP,
+    id_patient INT NOT NULL,
+    id_medecin INT NOT NULL,
+    FOREIGN KEY (id_patient) REFERENCES patient(id_patient),
+    FOREIGN KEY (id_medecin) REFERENCES medecin(id_medecin)
+) ENGINE=InnoDB;
+
+-- =========================
+-- TABLE HISTORIQUE MEDICAL
+-- =========================
+CREATE TABLE historique (
+    id_historique INT AUTO_INCREMENT PRIMARY KEY,
+    type_action VARCHAR(50) NOT NULL,
+    details TEXT NOT NULL,
+    date_action DATETIME DEFAULT CURRENT_TIMESTAMP,
+    id_patient INT,
+    id_amsp INT,
+    FOREIGN KEY (id_patient) REFERENCES patient(id_patient),
+    FOREIGN KEY (id_amsp) REFERENCES amsp(id_amsp)
+) ENGINE=InnoDB;
+
+-- =========================
+-- CRH : Compte Rendu Hospitalisation
+-- =========================
+CREATE TABLE crh (
+    id_crh INT AUTO_INCREMENT PRIMARY KEY,
+    contenu TEXT NOT NULL,
+    date_entree DATE NOT NULL,
+    date_sortie DATE,
+    id_patient INT NOT NULL,
+    id_medecin INT NOT NULL,
+    FOREIGN KEY (id_patient) REFERENCES patient(id_patient),
+    FOREIGN KEY (id_medecin) REFERENCES medecin(id_medecin)
+) ENGINE=InnoDB;
+
+-- =========================
+-- CRO : Compte Rendu Opératoire
+-- =========================
+CREATE TABLE cro (
+    id_cro INT AUTO_INCREMENT PRIMARY KEY,
+    date_operation DATE NOT NULL DEFAULT (curdate()),
+    bloc INT,
+    diagnostic_lesionnel VARCHAR(200) NOT NULL,
+    intervention_pratique VARCHAR(200) NOT NULL,
+    id_patient INT NOT NULL,
+    id_operateur INT NOT NULL,
+    id_aide INT NOT NULL,
+    id_reanimateur INT NOT NULL,
+    id_anesthesiste INT NOT NULL,
+    FOREIGN KEY (id_patient) REFERENCES patient(id_patient),
+    FOREIGN KEY (id_operateur) REFERENCES medecin(id_medecin),
+    FOREIGN KEY (id_aide) REFERENCES medecin(id_medecin),
+    FOREIGN KEY (id_reanimateur) REFERENCES medecin(id_medecin),
+    FOREIGN KEY (id_anesthesiste) REFERENCES medecin(id_medecin)
+) ENGINE=InnoDB;
+
+-- =========================
+-- TITRE DE SEJOUR
+-- =========================
+CREATE TABLE certificat_sejour (
+    id_titre INT AUTO_INCREMENT PRIMARY KEY,
+    date_debut DATE NOT NULL,
+    date_fin DATE,
+    id_patient INT NOT NULL,
+    FOREIGN KEY (id_patient) REFERENCES patient(id_patient)
+) ENGINE=InnoDB;
+
+-- =========================
+-- CERTIFICAT MEDICAL
+-- =========================
+CREATE TABLE certificat_medical (
+    id_certificat INT AUTO_INCREMENT PRIMARY KEY,
+	statut ENUM('APTE','INAPTE') DEFAULT 'INAPTE',
+    date_emission DATE NOT NULL default (curdate()),
+    id_patient INT NOT NULL,
+    id_medecin INT NOT NULL,
+    FOREIGN KEY (id_patient) REFERENCES patient(id_patient),
+    FOREIGN KEY (id_medecin) REFERENCES medecin(id_medecin)
+) ENGINE=InnoDB;
+
+-- =========================
+-- ARRET TRAVAIL
+-- =========================
+CREATE TABLE arret_travail (
+    id_arret INT AUTO_INCREMENT PRIMARY KEY,
+    type ENUM('UN ARRET DE TRAVAIL','UNE PROLONGATION','UNE REPRISE') DEFAULT 'UN ARRET DE TRAVAIL',
+    date_debut DATE NOT NULL,
+    date_fin DATE NOT NULL,
+    id_patient INT NOT NULL,
+    id_medecin INT NOT NULL,
+    FOREIGN KEY (id_patient) REFERENCES patient(id_patient),
+    FOREIGN KEY (id_medecin) REFERENCES medecin(id_medecin)
+) ENGINE=InnoDB;
+
