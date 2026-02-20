@@ -50,15 +50,15 @@ public class DownloadCrhQrPDF extends HttpServlet {
         c.beginText();
         c.setFont(PDType1Font.TIMES_BOLD, 20);
         c.newLineAtOffset(margin, cursorY);
-        c.showText("HOPITAL UNIVERSITAIRE");
+        c.showText("HOPITAL CHAHIDS MAHMOUDI");
         c.endText();
 
         c.beginText();
         c.setFont(PDType1Font.TIMES_ROMAN, 10);
         c.newLineAtOffset(margin, cursorY - 18);
-        c.showText("Adresse : Tizi-Ouzou");
+        c.showText("Adresse :1, Bd Krim Belkacem Nouvelle Ville 15000 Tizi-Ouzou");
         c.newLineAtOffset(0, -14);
-        c.showText("Tel : 026 xx xx xx | Email : contact@hopital.dz");
+        c.showText("Tel : 026 11 00 64 | Email : contact@hcm-dz.com");
         c.endText();
 
         c.moveTo(margin, cursorY - 40);
