@@ -60,7 +60,7 @@ public class DownloadCroQrPDF extends HttpServlet {
         c.beginText();
         c.setFont(PDType1Font.TIMES_BOLD, 20);
         c.newLineAtOffset(margin, y);
-        c.showText("HOPITAL UNIVERSITAIRE");
+        c.showText("HOPITAL CHAHIDS MAHMOUDI");
         c.endText();
 
         c.beginText();
@@ -68,7 +68,7 @@ public class DownloadCroQrPDF extends HttpServlet {
         c.newLineAtOffset(margin, y - 18);
         c.showText("Adresse : Tizi-Ouzou");
         c.newLineAtOffset(0, -14);
-        c.showText("Tel : 026 xx xx xx | Email : contact@hopital.dz");
+        c.showText("Tel : 026 11 00 64 | Email : contact@hcm-dz.com");
         c.endText();
 
         c.moveTo(margin, y - 40);
