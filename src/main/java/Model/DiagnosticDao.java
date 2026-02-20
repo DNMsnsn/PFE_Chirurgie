@@ -40,7 +40,7 @@ public class DiagnosticDao extends DAO<Diagnostic> {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return new Diagnostic();
 	}
 	
 	public List<Diagnostic> search(String search){
@@ -88,7 +88,7 @@ public class DiagnosticDao extends DAO<Diagnostic> {
 		}
 		
 		
-		return null;
+		return new ArrayList<Diagnostic>();
 	}
 	
 	public List<Diagnostic> listDiagnostic(){
@@ -131,7 +131,7 @@ public class DiagnosticDao extends DAO<Diagnostic> {
 		}
 		
 		
-		return null;
+		return new ArrayList<Diagnostic>();
 	}
 	
 	public int patientId(String fnm, String snm) {
