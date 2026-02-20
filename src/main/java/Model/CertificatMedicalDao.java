@@ -171,7 +171,7 @@ public class CertificatMedicalDao extends DAO<CertificatMedical> {
 		}
 		
 		
-		return null;
+		return new ArrayList<CertificatMedical>();
 	}
 	
 	public CertificatMedical getById(int id) {
@@ -209,7 +209,7 @@ public class CertificatMedicalDao extends DAO<CertificatMedical> {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return new CertificatMedical();
 	}
 	
 	public int idPatient(String fnm, String snm) {
