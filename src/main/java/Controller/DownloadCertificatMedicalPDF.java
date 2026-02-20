@@ -53,7 +53,7 @@ public class DownloadCertificatMedicalPDF extends HttpServlet {
 
             CertificatMedicalGenerator.genererCertificat(
                     temp.toString(),                 
-                    "HOPITAL CENTRAL D'AZAZGA",      
+                    "HOPITAL CHAHIDS MAHMOUDI",      
                     p.getNom_medecin(),              
                     p.getPrenom_medecin().toUpperCase(), 
                     p.getNom_patient(),                       
