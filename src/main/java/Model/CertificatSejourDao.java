@@ -190,7 +190,7 @@ public class CertificatSejourDao extends DAO<CertificatSejour> {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return new CertificatSejour();
 	}
 	
 	public int idPatient(String fnm, String snm) {
