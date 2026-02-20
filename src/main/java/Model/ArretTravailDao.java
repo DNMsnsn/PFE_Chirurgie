@@ -195,7 +195,7 @@ public class ArretTravailDao extends DAO<ArretTravail> {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return new ArrayList<ArretTravail>();
 	}
 	
 	public ArretTravail getById(int id) {
@@ -241,7 +241,7 @@ public class ArretTravailDao extends DAO<ArretTravail> {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return new ArretTravail();
 	}
 	
 	public int idPatient(String fnm, String snm) {
