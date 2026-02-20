@@ -38,7 +38,7 @@ public class MedecinDao extends DAO<Medecin> {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return new Medecin();
 	}
 	
 	public List<Medecin> search(String search){
@@ -77,7 +77,7 @@ public class MedecinDao extends DAO<Medecin> {
 		}
 		
 		
-		return null;
+		return new ArrayList<Medecin>();
 	}
 	
 	public List<Medecin> listMedecin(){
@@ -112,7 +112,7 @@ public class MedecinDao extends DAO<Medecin> {
 		}
 		
 		
-		return null;
+		return new ArrayList<Medecin>();
 	}
 
 	@Override
