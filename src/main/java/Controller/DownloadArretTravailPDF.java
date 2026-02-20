@@ -49,7 +49,7 @@ public class DownloadArretTravailPDF extends HttpServlet {
             
             ArretTravailGenerator.genererCertificat(
                     temp.toString(),
-                    "HOPITAL CENTRAL D'AZAZGA",
+                    "HOPITAL CHAHIDS MAHMOUDI",
                     a.getNom_medecin(),
                     a.getPrenom_medecin().toUpperCase(),
                     a.getNom_patient(),
