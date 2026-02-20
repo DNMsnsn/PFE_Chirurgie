@@ -84,7 +84,7 @@ public class HistoriqueDao extends DAO<Historique> {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return new ArrayList<Historique>();
 	}
 
 	@Override
