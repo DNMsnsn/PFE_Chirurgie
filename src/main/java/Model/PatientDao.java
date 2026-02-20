@@ -120,7 +120,7 @@ public class PatientDao extends DAO<Patient> {
 		}
 		
 		
-		return null;
+		return new ArrayList<Patient>();
 	}
 	
 	@Override
