@@ -54,9 +54,9 @@ public class CertificatMedicalGenerator {
         content.newLineAtOffset(marginLeft, headerY - 20);
         content.showText("Adresse : Tizi-Ouzou");
         content.newLineAtOffset(0, -14);
-        content.showText("Tel : 026 xx xx xx    Fax : 026 xx xx xx");
+        content.showText("Tel : 026 11 00 64");
         content.newLineAtOffset(0, -14);
-        content.showText("Email : contact@hopital.dz    Site : www.hopital.dz");
+        content.showText("Email : contact@hcm-dz.com    Site : www.hcm-dz.com");
         content.endText();
 
         content.moveTo(marginLeft, headerY - 70);
