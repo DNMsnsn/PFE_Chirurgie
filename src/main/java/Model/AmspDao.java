@@ -39,7 +39,7 @@ public class AmspDao extends DAO<Amsp> {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return new Amsp();
 	}
 	
 	public List<Amsp> search(String search) {
@@ -75,7 +75,7 @@ public class AmspDao extends DAO<Amsp> {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return new ArrayList<Amsp>();
 	}
 	
 	public Amsp select(String fnm) {
@@ -106,7 +106,7 @@ public class AmspDao extends DAO<Amsp> {
 		}
 		
 		
-		return null;
+		return new Amsp();
 	}
 	
 	public List<Amsp> listAmsp(){
@@ -140,7 +140,7 @@ public class AmspDao extends DAO<Amsp> {
 		}
 		
 		
-		return null;
+		return new ArrayList<Amsp>();
 	}
 	
 	public boolean exists(String fnm, String psw) {
