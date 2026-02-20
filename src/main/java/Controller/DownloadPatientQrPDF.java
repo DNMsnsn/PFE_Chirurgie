@@ -69,7 +69,7 @@ public class DownloadPatientQrPDF extends HttpServlet {
             content.newLineAtOffset(marginLeft, headerY - 18);
             content.showText("Adresse : Tizi-Ouzou");
             content.newLineAtOffset(0, -14);
-            content.showText("Tel : 026 xx xx xx | Email : contact@hopital.dz");
+            content.showText("Tel : 026 11 00 64 | Email : contact@hcm-dz.com");
             content.endText();
 
             content.moveTo(marginLeft, headerY - 40);
