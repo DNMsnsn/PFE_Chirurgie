@@ -54,7 +54,7 @@ public class DownloadCertificatSejourPDF extends HttpServlet {
 
             CertificatSejourGenerator.genererCertificat(
                     temp.toString(),              
-                    "HOPITAL CENTRAL D'AZAZGA",   
+                    "HOPITAL CHAHIDS MAHMOUDI",   
                     c.getNom_patient(),           
                     c.getPrenom_patient(),
                     LocalDate.parse(c.getDate_naiss_patient()),
