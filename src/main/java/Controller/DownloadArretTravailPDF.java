@@ -45,7 +45,7 @@ public class DownloadArretTravailPDF extends HttpServlet {
 
             Path temp = Files.createTempFile("arret_", ".pdf");
 
-            String urlCertificat = "http://localhost:8080/revisionControle/ResultatArretTravail?id=" + id; 
+            String urlCertificat = "https:/azazmed.net/ResultatArretTravail?id=" + id; 
             
             ArretTravailGenerator.genererCertificat(
                     temp.toString(),
