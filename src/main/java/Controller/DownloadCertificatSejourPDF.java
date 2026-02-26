@@ -50,7 +50,7 @@ public class DownloadCertificatSejourPDF extends HttpServlet {
             Path temp = Files.createTempFile("certificat_sejour_", ".pdf");
 
             // URL dynamique pour le QR code (si nécessaire)
-            String urlCertificat = "http://localhost:8080/revisionControle/ResultatCertificatSejour?id=" + id;
+            String urlCertificat = "https://azazmed.net/ResultatCertificatSejour?id=" + id;
 
             CertificatSejourGenerator.genererCertificat(
                     temp.toString(),              
