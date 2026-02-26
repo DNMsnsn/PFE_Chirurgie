@@ -49,7 +49,7 @@ public class DownloadCertificatMedicalPDF extends HttpServlet {
             // Créer un fichier temporaire et générer le PDF dedans
             Path temp = Files.createTempFile("certificat_", ".pdf");
 
-            String urlCertificat = "http://localhost:8080/revisionControle/ResultatCertificatMedical?id=" + id;
+            String urlCertificat = "https://azazmed.net/ResultatCertificatMedical?id=" + id;
 
             CertificatMedicalGenerator.genererCertificat(
                     temp.toString(),                 
