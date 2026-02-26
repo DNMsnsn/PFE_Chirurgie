@@ -122,7 +122,7 @@ public class DownloadCrhQrPDF extends HttpServlet {
         /* ========= QR CODE ========= */
         try {
             byte[] qr = QRCodeGenerator.generateQRCode(
-                    "http://localhost:8080/revisionControle/InterfaceUtilisateur?id=" + idPatient,
+                    "https://azazmed.net/InterfaceUtilisateur?id=" + idPatient,
                     120
             );
             PDImageXObject qrImg = PDImageXObject.createFromByteArray(doc, qr, "qr");
