@@ -39,7 +39,7 @@ public class DownloadPatientQrPDF extends HttpServlet {
             String nomHopital = "HÔPITAL NATIONAL";
             
             // ================= QR =================
-            String qrData = "http://localhost:8080/revisionControle/InterfaceUtilisateur?id=" + idPatient;
+            String qrData = "https://azazmed.net/InterfaceUtilisateur?id=" + idPatient;
             byte[] qrBytes = QRCodeGenerator.generateQRCode(qrData, 180);
 
             // ================= PDF =================
