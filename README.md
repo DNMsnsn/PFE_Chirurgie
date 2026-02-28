@@ -175,23 +175,31 @@ CREATE TABLE crh (
 -- =========================
 -- TABLE CRO (Operative Report)
 -- =========================
-CREATE TABLE cro (
-    id_cro INT AUTO_INCREMENT PRIMARY KEY,
-    date_operation DATE NOT NULL DEFAULT (curdate()),
-    bloc INT,
-    diagnostic_lesionnel VARCHAR(200) NOT NULL,
-    intervention_pratique VARCHAR(200) NOT NULL,
-    id_patient INT NOT NULL,
-    id_operateur INT NOT NULL,
-    id_aide INT NOT NULL,
-    id_reanimateur INT NOT NULL,
-    id_anesthesiste INT NOT NULL,
-    FOREIGN KEY (id_patient) REFERENCES patient(id_patient),
-    FOREIGN KEY (id_operateur) REFERENCES medecin(id_medecin),
-    FOREIGN KEY (id_aide) REFERENCES medecin(id_medecin),
-    FOREIGN KEY (id_reanimateur) REFERENCES medecin(id_medecin),
-    FOREIGN KEY (id_anesthesiste) REFERENCES medecin(id_medecin)
-) ENGINE=InnoDB;
+
+CREATE TABLE `cro` (
+  `id_cro` int NOT NULL AUTO_INCREMENT,
+  `date_operation` date NOT NULL DEFAULT (curdate()),
+  `bloc` int DEFAULT NULL,
+  `diagnostic_lesionnel` varchar(200) NOT NULL,
+  `intervention_pratique` varchar(200) NOT NULL,
+  `id_patient` int NOT NULL,
+  `id_operateur` int NOT NULL,
+  `id_aide` int NOT NULL,
+  `id_reanimateur` int NOT NULL,
+  `id_anesthesiste` int NOT NULL,
+  `protocole` text NOT NULL,
+  PRIMARY KEY (`id_cro`),
+  KEY `id_patient` (`id_patient`),
+  KEY `id_operateur` (`id_operateur`),
+  KEY `id_aide` (`id_aide`),
+  KEY `id_reanimateur` (`id_reanimateur`),
+  KEY `id_anesthesiste` (`id_anesthesiste`),
+  CONSTRAINT `cro_ibfk_1` FOREIGN KEY (`id_patient`) REFERENCES `patient` (`id_patient`),
+  CONSTRAINT `cro_ibfk_2` FOREIGN KEY (`id_operateur`) REFERENCES `medecin` (`id_medecin`),
+  CONSTRAINT `cro_ibfk_3` FOREIGN KEY (`id_aide`) REFERENCES `medecin` (`id_medecin`),
+  CONSTRAINT `cro_ibfk_4` FOREIGN KEY (`id_reanimateur`) REFERENCES `medecin` (`id_medecin`),
+  CONSTRAINT `cro_ibfk_5` FOREIGN KEY (`id_anesthesiste`) REFERENCES `medecin` (`id_medecin`)
+) ENGINE=InnoDB
 
 -- =========================
 -- TABLE CERTIFICAT DE SEJOUR
