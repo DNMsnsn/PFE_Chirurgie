@@ -36,7 +36,7 @@ public class DownloadPatientQrPDF extends HttpServlet {
             String dt = request.getParameter("dt");
             String grp = request.getParameter("grp");
 
-            String nomHopital = "HÔPITAL NATIONAL";
+            String nomHopital = "HÔPITAL CHAHIDS MAHMOUDI";
             
             // ================= QR =================
             String qrData = "https://azazmed.net/InterfaceUtilisateur?id=" + idPatient;
