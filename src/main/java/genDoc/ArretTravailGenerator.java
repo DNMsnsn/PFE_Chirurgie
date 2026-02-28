@@ -82,12 +82,12 @@ public class ArretTravailGenerator {
 
         content.showText(
                 "Je soussigné Dr " + nomMedecin + " " + prenomMedecin +
-                " certifie que l'état de sante de Mr/Mme " + nomPatient + " " + prenomPatient + ","
+                " certifie que l'état de sante de Mr/Mme " + nomPatient
         );
         content.newLineAtOffset(0, -22);
 
         content.showText(
-        		"âgé(e) de " + age + " ans, nécessite " +
+        		prenomPatient + ", âgé(e) de " + age + " ans, nécessite " +
                 besoin + "."
         );
         content.newLineAtOffset(0, -22);
