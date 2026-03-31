@@ -39,7 +39,6 @@
                     <th>Prenom Patient</th>
                     <th>Nom Medecin</th>
                     <th>Prenom Medecin</th>
-                    <th>Date Diag</th>
                     <th>Pathologie</th>
                 </tr>
             </thead>
@@ -56,7 +55,6 @@
 	                    <td><%= p.getSnmPatient() %></td>
 	                    <td><%= p.getFnmMedecin() %></td>
 	                    <td><%= p.getSnmMedecin() %></td>
-	                    <td><%= p.getDt_diag() %></td>
 	                    <td><%= p.getDescription_diag() %></td>
 	                    <td>
 	                        <button class="bt edit"
