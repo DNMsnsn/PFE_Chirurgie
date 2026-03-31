@@ -81,16 +81,17 @@ public class CertificatMedicalGenerator {
 
         content.showText(
                 "Je soussigné Dr " + nomMedecin + " " + prenomMedecin +
-                " certifie avoir examiné ce jour " + dateEmission + " " + "Mr/Mme " + nomPatient
+                " certifie avoir examiné ce jour " + dateEmission + " " + "Mr/Mme "
         );
         content.newLineAtOffset(0, -22);
 
         content.showText(
-        		 prenomPatient + ", âgé(e) de " + age + " ans, et le/la déclare indemne de toute affection cliniquement décelable."
+        		 nomPatient + prenomPatient + ", âgé(e) de " + age + " ans, et le/la déclare indemne de toute affection"
         );
         content.newLineAtOffset(0, -22);
-        
-        
+
+        content.showText("cliniquement décelable.");
+        content.newLineAtOffset(0, -22);
 
         content.showText(
                 "Le/la sus-nommé(e) est physiquement : " + in_apte
