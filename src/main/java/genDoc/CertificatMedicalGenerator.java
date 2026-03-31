@@ -2,7 +2,7 @@ package genDoc;
 
 import java.time.LocalDate;
 import java.time.Period;
-
+import java.time.format.DateTimeFormatter;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -104,7 +104,7 @@ public class CertificatMedicalGenerator {
         content.newLineAtOffset(0, -40);
 
         content.showText(
-                "Fait à Tizi-Ouzou, le " + LocalDate.now()
+                "Fait à Tizi-Ouzou, le " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         );
 
         content.endText();
