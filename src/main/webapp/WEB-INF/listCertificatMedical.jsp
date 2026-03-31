@@ -28,7 +28,7 @@
     <button class="bt add" onclick="showElement()"></button>
 
     <div class="maincontainer">
-    	<h1>Liste Certificats Medicals</h1>
+    	<h1>Liste Certificats Médicaux</h1>
         <div class="error">${error}</div>
         <table class="data-table">
             <thead>
