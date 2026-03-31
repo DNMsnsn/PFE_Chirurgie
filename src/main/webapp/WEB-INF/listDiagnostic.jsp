@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List Diagnostic</title>
+    <title>List Diagnostics</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
  	<button class="bt add" onclick="showElement()"></button>
 
     <div class="maincontainer">
-    	<h1>Liste Diagnostic</h1>
+    	<h1>Liste Diagnostics</h1>
     	<div class="error">${error}</div>
         <table class="data-table">
             <thead>
