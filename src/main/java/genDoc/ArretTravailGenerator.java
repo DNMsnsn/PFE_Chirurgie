@@ -2,7 +2,7 @@ package genDoc;
 
 import java.time.LocalDate;
 import java.time.Period;
-
+import java.time.temporal.ChronoUnit;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -93,7 +93,7 @@ public class ArretTravailGenerator {
         content.newLineAtOffset(0, -22);
 
         content.showText(
-                "De " + dateEntree + " à dater du " + dateSortie + " sauf complications."
+                "De " + (ChronoUnit.DAYS.between(LocalDate.parse(dateEntree), LocalDate.parse(dateSortie)) + 1) + " jours, à dater du " + dateSortie + " sauf complications."
         );
         content.newLineAtOffset(0, -40);
         
