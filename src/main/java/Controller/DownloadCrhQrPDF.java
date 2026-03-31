@@ -6,6 +6,8 @@ import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
+import java.time.format.DateTimeFormatter;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -87,8 +89,8 @@ public class DownloadCrhQrPDF extends HttpServlet {
         /* ========= BLOC OPÉRATION ========= */
         cursorY -= 95;
         drawBox(c, margin, cursorY - 45, pageWidth - 2 * margin, 45);
-        writeText(c, margin + 10, cursorY - 20, "Date d'entree : " + dte);
-        writeText(c, margin + 250, cursorY - 20, "Date de sortie : " + dts);
+        writeText(c, margin + 10, cursorY - 20, "Date d'entree : " + LocalDate.parse(dte).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+        writeText(c, margin + 250, cursorY - 20, "Date de sortie : " + LocalDate.parse(dts).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
 
         /* ========= BLOC PROTOCOLE ILLIMITÉ ========= */
         cursorY -= 60;
