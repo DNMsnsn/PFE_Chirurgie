@@ -84,7 +84,7 @@ public class CertificatSejourGenerator {
         content.newLineAtOffset(0, -22);
 
         content.showText(
-                "âgé(e) de " + age + " ans, a été hospitalise du " +
+                "âgé(e) de " + age + " ans, a été hospitalisé(e) du " +
                 dateEntree + " au " + dateSortie + "."
         );
         content.newLineAtOffset(0, -22);
