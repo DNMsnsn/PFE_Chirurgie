@@ -9,6 +9,7 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
+import java.time.format.DateTimeFormatter;
 
 public class ArretTravailGenerator {
 
@@ -93,7 +94,7 @@ public class ArretTravailGenerator {
         content.newLineAtOffset(0, -22);
 
         content.showText(
-                "De " + (ChronoUnit.DAYS.between(LocalDate.parse(dateEntree), LocalDate.parse(dateSortie)) + 1) + " jours, à dater du " + dateSortie + " sauf complications."
+                "De " + (ChronoUnit.DAYS.between(LocalDate.parse(dateEntree), LocalDate.parse(dateSortie)) + 1) + " jours, à dater du " + LocalDate.parse(dateEntree).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")) + " sauf complications."
         );
         content.newLineAtOffset(0, -40);
         
