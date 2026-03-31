@@ -107,7 +107,7 @@
 					        <label for="dt" class="lab">Date du Diagnostique : </label><br>
 					        <input type="date" name="dt" id="dt" class="inp" required><br>
 					        
-					        <label for="desc" class="lab">Description : </label><br>
+					        <label for="desc" class="lab">Pathologie : </label><br>
 					        <textarea name="desc" id="desc" class="motif"></textarea><br>
 					        
 					        <input type="submit" id="btn" class="bttn" value="Update Diagnostic">
