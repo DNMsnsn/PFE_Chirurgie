@@ -29,7 +29,7 @@
  	<button class="bt add" onclick="showElement()"></button>
 
     <div class="maincontainer">
-    	<h1>Liste Diagnostiques</h1>
+    	<h1>Liste Diagnostic</h1>
     	<div class="error">${error}</div>
         <table class="data-table">
             <thead>
@@ -40,7 +40,7 @@
                     <th>Nom Medecin</th>
                     <th>Prenom Medecin</th>
                     <th>Date Diag</th>
-                    <th>Description</th>
+                    <th>Pathologie</th>
                 </tr>
             </thead>
 
