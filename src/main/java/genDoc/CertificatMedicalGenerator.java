@@ -81,7 +81,7 @@ public class CertificatMedicalGenerator {
 
         content.showText(
                 "Je soussigné Dr " + nomMedecin + " " + prenomMedecin +
-                " certifie avoir examiné ce jour " + dateEmission + " " + "Mr/Mme "
+                " certifie avoir examiné ce jour " + LocalDate.parse(dateEmission).format(DateTimeFormatter.ofPattern("dd-MM-yyyy") + " " + "Mr/Mme "
         );
         content.newLineAtOffset(0, -22);
 
