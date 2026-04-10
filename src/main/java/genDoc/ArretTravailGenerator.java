@@ -104,7 +104,7 @@ public class ArretTravailGenerator {
         content.newLineAtOffset(0, -40);
 
         content.showText(
-                "Fait à Tizi-Ouzou, le " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")
+                "Fait à Tizi-Ouzou, le " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
         );
 
         content.endText();
