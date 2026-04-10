@@ -87,7 +87,7 @@ public class CertificatSejourGenerator {
 
         content.showText(
                 "âgé(e) de " + age + " ans, a été hospitalisé(e) du " +
-                LocalDate.parse(dateEntree).format(DateTimeFormatter.ofPattern("dd-MM-yyyy") + " au " + LocalDate.parse(dateSortie).format(DateTimeFormatter.ofPattern("dd-MM-yyyy") + "."
+                dateEntree.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")) + " au " + dateSortie.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")) + "."
         );
         content.newLineAtOffset(0, -22);
 
@@ -97,7 +97,7 @@ public class CertificatSejourGenerator {
         content.newLineAtOffset(0, -40);
 
         content.showText(
-                "Fait à Tizi-Ouzou, le " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                "Fait à Tizi-Ouzou, le " + LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
         );
 
         content.endText();
