@@ -6,6 +6,7 @@ import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import jakarta.servlet.ServletException;
